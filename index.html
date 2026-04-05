@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marcos Silva | Dev Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- NOTEBOOK COVER -->
+    <div id="cover" class="cover">
+        <div class="cover-spine"></div>
+        <div class="cover-front">
+            <div class="cover-elastic"></div>
+            <div class="cover-label">
+                <span class="cover-label-small">portfolio de</span>
+                <h1 class="cover-name">Marcos Silva</h1>
+                <span class="cover-label-role">Full-Stack Developer</span>
+            </div>
+            <div class="cover-sticker">
+                <i class="fas fa-code"></i>
+            </div>
+            <div class="cover-sticker sticker-2">
+                <i class="fab fa-python"></i>
+            </div>
+            <div class="cover-sticker sticker-3">
+                <i class="fab fa-react"></i>
+            </div>
+            <button id="openBook" class="cover-open-btn">
+                <span>Abrir caderno</span>
+                <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- NOTEBOOK INTERIOR -->
+    <div id="notebook" class="notebook hidden">
+        <!-- Spiral binding -->
+        <div class="spiral">
+            <div class="spiral-ring"></div>
+            <div class="spiral-ring"></div>
+            <div class="spiral-ring"></div>
+            <div class="spiral-ring"></div>
+            <div class="spiral-ring"></div>
+            <div class="spiral-ring"></div>
+            <div class="spiral-ring"></div>
+            <div class="spiral-ring"></div>
+            <div class="spiral-ring"></div>
+            <div class="spiral-ring"></div>
+            <div class="spiral-ring"></div>
+            <div class="spiral-ring"></div>
+        </div>
+
+        <!-- Tab Navigation (like real notebook tabs) -->
+        <nav class="tabs">
+            <button class="tab active" data-page="about">
+                <i class="fas fa-user"></i>
+                <span>Sobre</span>
+            </button>
+            <button class="tab" data-page="projects">
+                <i class="fas fa-code-branch"></i>
+                <span>Projetos</span>
+            </button>
+            <button class="tab" data-page="skills">
+                <i class="fas fa-laptop-code"></i>
+                <span>Skills</span>
+            </button>
+            <button class="tab" data-page="contact">
+                <i class="fas fa-envelope"></i>
+                <span>Contato</span>
+            </button>
+        </nav>
+
+        <!-- Page content -->
+        <div class="page-container">
+            <!-- ABOUT PAGE -->
+            <section id="page-about" class="page active">
+                <div class="page-lines"></div>
+                <div class="page-margin"></div>
+                <div class="page-content">
+                    <div class="handwritten-header">
+                        <h2>Sobre mim</h2>
+                        <div class="underline-sketch"></div>
+                    </div>
+                    
+                    <div class="profile-card">
+                        <div class="profile-avatar">
+                            <img id="avatarImg" src="" alt="Marcos Silva">
+                        </div>
+                        <div class="profile-info">
+                            <h3 class="handwritten">Marcos Silva</h3>
+                            <p class="typed-text">Desenvolvedor Full-Stack apaixonado por tecnologia, com experiência em Python, C#, JavaScript, React, Angular, Flask e .NET.</p>
+                            
+                            <div class="sticky-note yellow">
+                                <div class="sticky-pin"></div>
+                                <p><i class="fas fa-map-marker-alt"></i> Brasil</p>
+                                <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/marcosprogramador/" target="_blank">marcosprogramador</a></p>
+                                <p><i class="fab fa-github"></i> <a href="https://github.com/masilvaarcs" target="_blank">masilvaarcs</a></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="stats-row">
+                        <div class="stat-card doodle-border">
+                            <span class="stat-number" id="repoCount">0</span>
+                            <span class="stat-label">Repositórios</span>
+                        </div>
+                        <div class="stat-card doodle-border">
+                            <span class="stat-number" id="langCount">0</span>
+                            <span class="stat-label">Linguagens</span>
+                        </div>
+                        <div class="stat-card doodle-border">
+                            <span class="stat-number" id="starCount">0</span>
+                            <span class="stat-label">Stars</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PROJECTS PAGE -->
+            <section id="page-projects" class="page">
+                <div class="page-lines"></div>
+                <div class="page-margin"></div>
+                <div class="page-content">
+                    <div class="handwritten-header">
+                        <h2>Meus Projetos</h2>
+                        <div class="underline-sketch"></div>
+                    </div>
+
+                    <div class="filter-row">
+                        <button class="filter-btn active" data-filter="all">Todos</button>
+                        <button class="filter-btn" data-filter="Python">Python</button>
+                        <button class="filter-btn" data-filter="JavaScript">JavaScript</button>
+                        <button class="filter-btn" data-filter="C#">C#</button>
+                        <button class="filter-btn" data-filter="TypeScript">TypeScript</button>
+                    </div>
+
+                    <div id="projectsGrid" class="projects-grid">
+                        <div class="loading-sketch">
+                            <div class="pencil-loader"></div>
+                            <p>Carregando projetos do GitHub...</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SKILLS PAGE -->
+            <section id="page-skills" class="page">
+                <div class="page-lines"></div>
+                <div class="page-margin"></div>
+                <div class="page-content">
+                    <div class="handwritten-header">
+                        <h2>Hard Skills</h2>
+                        <div class="underline-sketch"></div>
+                    </div>
+
+                    <div class="skills-notebook">
+                        <div class="skill-category">
+                            <h3 class="category-title"><i class="fas fa-server"></i> Backend</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag python">Python</span>
+                                <span class="skill-tag python">Flask</span>
+                                <span class="skill-tag csharp">C#</span>
+                                <span class="skill-tag csharp">.NET</span>
+                                <span class="skill-tag csharp">ASP.NET Core</span>
+                                <span class="skill-tag js">Node.js</span>
+                                <span class="skill-tag js">Express</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-category">
+                            <h3 class="category-title"><i class="fas fa-palette"></i> Frontend</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag js">React</span>
+                                <span class="skill-tag ts">Angular</span>
+                                <span class="skill-tag ts">TypeScript</span>
+                                <span class="skill-tag js">JavaScript</span>
+                                <span class="skill-tag html">HTML5</span>
+                                <span class="skill-tag css">CSS3</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-category">
+                            <h3 class="category-title"><i class="fas fa-database"></i> Dados & DevOps</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag python">Pandas</span>
+                                <span class="skill-tag python">Plotly</span>
+                                <span class="skill-tag python">Streamlit</span>
+                                <span class="skill-tag docker">Docker</span>
+                                <span class="skill-tag db">SQLite</span>
+                                <span class="skill-tag db">SQL</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-category">
+                            <h3 class="category-title"><i class="fas fa-vial"></i> Testes & Qualidade</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag python">pytest</span>
+                                <span class="skill-tag python">Behave (BDD)</span>
+                                <span class="skill-tag python">TDD</span>
+                                <span class="skill-tag js">Jest</span>
+                                <span class="skill-tag csharp">LINQ</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CONTACT PAGE -->
+            <section id="page-contact" class="page">
+                <div class="page-lines"></div>
+                <div class="page-margin"></div>
+                <div class="page-content">
+                    <div class="handwritten-header">
+                        <h2>Contato</h2>
+                        <div class="underline-sketch"></div>
+                    </div>
+
+                    <div class="contact-cards">
+                        <a href="https://www.linkedin.com/in/marcosprogramador/" target="_blank" class="contact-card sticky-note blue">
+                            <div class="sticky-pin"></div>
+                            <i class="fab fa-linkedin fa-2x"></i>
+                            <h3>LinkedIn</h3>
+                            <p>marcosprogramador</p>
+                        </a>
+
+                        <a href="https://github.com/masilvaarcs" target="_blank" class="contact-card sticky-note green">
+                            <div class="sticky-pin"></div>
+                            <i class="fab fa-github fa-2x"></i>
+                            <h3>GitHub</h3>
+                            <p>masilvaarcs</p>
+                        </a>
+
+                        <div class="contact-card sticky-note pink">
+                            <div class="sticky-pin"></div>
+                            <i class="fas fa-envelope fa-2x"></i>
+                            <h3>Email</h3>
+                            <p>Entre em contato pelo LinkedIn</p>
+                        </div>
+                    </div>
+
+                    <div class="torn-paper-note">
+                        <p class="handwritten">"O melhor código é aquele que resolve problemas reais e é fácil de entender."</p>
+                        <span class="signature">— Marcos</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
