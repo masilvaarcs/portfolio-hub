@@ -1,0 +1,8 @@
+{
+  "name": "nuget-manager",
+  "source": "github-awesome-copilot",
+  "description": "Manage NuGet packages in .NET projects/solutions.",
+  "description_ja": "Nuget Manager",
+  "categories": [],
+  "installedAt": "2026-04-19T18:39:08.838Z"
+}

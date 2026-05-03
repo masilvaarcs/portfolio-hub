@@ -1,0 +1,8 @@
+{
+  "name": "dotnet-design-pattern-review",
+  "source": "github-awesome-copilot",
+  "description": "Review the C#/.NET code for design pattern implementation and suggest improvements.",
+  "whenToUse": "Review the C#/.NET code in ${selection} for design pattern implementation and suggest improvements for the solution/project. Do not make any changes to the code, just provide a review.",
+  "categories": [],
+  "installedAt": "2026-04-19T18:39:07.698Z"
+}

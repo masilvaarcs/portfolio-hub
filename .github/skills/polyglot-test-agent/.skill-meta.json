@@ -1,0 +1,8 @@
+{
+  "name": "polyglot-test-agent",
+  "source": "github-awesome-copilot",
+  "description": "Generates comprehensive, workable unit tests for any programming language using a multi-agent pipeline.",
+  "whenToUse": "An AI-powered skill that generates comprehensive, workable unit tests for any programming language using a coordinated multi-agent pipeline.",
+  "categories": [],
+  "installedAt": "2026-04-19T18:38:02.869Z"
+}

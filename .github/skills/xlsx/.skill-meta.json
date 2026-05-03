@@ -1,0 +1,8 @@
+{
+  "name": "xlsx",
+  "source": "anthropics-skills",
+  "description": "Use this skill any time a spreadsheet file is the primary input or output.",
+  "description_ja": "Process Excel spreadsheets (.xlsx)",
+  "categories": [],
+  "installedAt": "2026-04-19T18:38:18.666Z"
+}

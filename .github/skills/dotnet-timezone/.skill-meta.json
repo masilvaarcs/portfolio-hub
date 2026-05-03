@@ -1,0 +1,8 @@
+{
+  "name": "dotnet-timezone",
+  "source": "github-awesome-copilot",
+  "description": ".NET timezone handling guidance for C# applications.",
+  "whenToUse": "Resolve timezone questions for .NET and C# code with production-safe guidance and copy-paste-ready snippets.",
+  "categories": [],
+  "installedAt": "2026-04-19T18:39:32.234Z"
+}

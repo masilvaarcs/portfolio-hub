@@ -1,0 +1,8 @@
+{
+  "name": "csharp-async",
+  "source": "github-awesome-copilot",
+  "description": "Get best practices for C# async programming",
+  "whenToUse": "Your goal is to help me follow best practices for asynchronous programming in C#.",
+  "categories": [],
+  "installedAt": "2026-04-19T18:39:09.934Z"
+}

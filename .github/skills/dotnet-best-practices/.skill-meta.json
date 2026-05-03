@@ -1,0 +1,8 @@
+{
+  "name": "dotnet-best-practices",
+  "source": "github-awesome-copilot",
+  "description": "Ensure .NET/C# code meets best practices for the solution/project.",
+  "whenToUse": "Your task is to ensure .NET/C# code in ${selection} meets the best practices specific to this solution/project. This includes:",
+  "categories": [],
+  "installedAt": "2026-04-19T18:39:05.592Z"
+}

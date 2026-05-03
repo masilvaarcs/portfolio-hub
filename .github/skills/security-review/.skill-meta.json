@@ -1,0 +1,8 @@
+{
+  "name": "security-review",
+  "source": "github-awesome-copilot",
+  "description": "AI-powered codebase security scanner that reasons about code like a security researcher — tracing data flows, understanding component interactions, and catching vulnerabilities that pattern-matching t...",
+  "whenToUse": "An AI-powered security scanner that reasons about your codebase the way a human security researcher would — tracing data flows, understanding component interactions, and catching",
+  "categories": [],
+  "installedAt": "2026-04-19T18:39:30.035Z"
+}

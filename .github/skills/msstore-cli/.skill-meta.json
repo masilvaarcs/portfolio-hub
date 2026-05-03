@@ -1,0 +1,8 @@
+{
+  "name": "msstore-cli",
+  "source": "github-awesome-copilot",
+  "description": "Microsoft Store Developer CLI (msstore) for publishing Windows applications to the Microsoft Store.",
+  "whenToUse": "The Microsoft Store Developer CLI (`msstore`) is a cross-platform command-line interface for publishing and managing applications in the Microsoft Store. It integrates with Partner Center APIs and ...",
+  "categories": [],
+  "installedAt": "2026-04-19T18:39:14.187Z"
+}
