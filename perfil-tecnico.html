@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Marcos Santos da Silva — Desenvolvedor Full Stack Sênior | .NET C# · Angular · Python | 27 anos de experiência em sistemas críticos">
+<meta property="og:title" content="Marcos Santos da Silva · Perfil Técnico">
+<meta property="og:description" content="Full Stack Developer · .NET C# · Angular · Python · trajetória contínua desde 1997">
+<meta property="og:url" content="https://masilvaarcs.github.io/portfolio-hub/perfil-tecnico.html">
+<title>Marcos Santos da Silva · Perfil Técnico</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --bg:#0a0f1a;
+  --surface:#111827;
+  --surface2:#1a2235;
+  --accent:#00d4ff;
+  --accent2:#7c3aed;
+  --accent3:#10b981;
+  --gold:#f59e0b;
+  --text:#e2e8f0;
+  --muted:#64748b;
+  --border:#1e3a5f;
+}
+
+html{scroll-behavior:smooth;}
+
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Sora',sans-serif;
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+/* NAV */
+nav{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(10,15,26,0.92);
+  backdrop-filter:blur(12px);
+  border-bottom:0.5px solid var(--border);
+  padding:0.75rem 2rem;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+}
+
+.nav-logo{
+  font-family:'Space Mono',monospace;
+  font-size:12px;
+  color:var(--accent);
+  text-decoration:none;
+  letter-spacing:0.1em;
+}
+
+.nav-links{
+  display:flex;
+  gap:1.5rem;
+  list-style:none;
+}
+
+.nav-links a{
+  font-size:12px;
+  color:var(--muted);
+  text-decoration:none;
+  transition:color 0.2s;
+  font-family:'Space Mono',monospace;
+}
+
+.nav-links a:hover{color:var(--accent);}
+
+.nav-back{
+  font-family:'Space Mono',monospace;
+  font-size:11px;
+  color:var(--muted);
+  text-decoration:none;
+  padding:5px 12px;
+  border:0.5px solid var(--border);
+  border-radius:20px;
+  transition:all 0.2s;
+  white-space:nowrap;
+}
+
+.nav-back:hover{border-color:var(--accent);color:var(--accent);}
+
+/* HERO */
+.hero{
+  position:relative;
+  padding:5rem 2rem 3.5rem;
+  text-align:center;
+  overflow:hidden;
+}
+
+.hero::before{
+  content:'';
+  position:absolute;
+  top:-80px;left:50%;transform:translateX(-50%);
+  width:700px;height:400px;
+  background:radial-gradient(ellipse,rgba(0,212,255,0.07) 0%,transparent 70%);
+  pointer-events:none;
+}
+
+.hero::after{
+  content:'';
+  position:absolute;
+  bottom:0;left:0;right:0;
+  height:1px;
+  background:linear-gradient(to right,transparent,var(--border),transparent);
+}
+
+.hero-eyebrow{
+  font-family:'Space Mono',monospace;
+  font-size:11px;
+  color:var(--accent);
+  letter-spacing:0.25em;
+  text-transform:uppercase;
+  margin-bottom:1.25rem;
+  opacity:0;
+  animation:fadeUp 0.6s 0.1s forwards;
+}
+
+.hero-name{
+  font-size:clamp(2rem,5vw,3.2rem);
+  font-weight:700;
+  line-height:1.1;
+  margin-bottom:0.6rem;
+  opacity:0;
+  animation:fadeUp 0.6s 0.25s forwards;
+}
+
+.hero-name span{color:var(--accent);}
+
+.hero-role{
+  font-size:clamp(0.85rem,2vw,1.05rem);
+  color:var(--muted);
+  font-weight:300;
+  margin-bottom:2.5rem;
+  opacity:0;
+  animation:fadeUp 0.6s 0.4s forwards;
+  line-height:1.7;
+}
+
+.available-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  font-size:11px;
+  color:var(--accent3);
+  background:rgba(16,185,129,0.08);
+  border:0.5px solid rgba(16,185,129,0.25);
+  border-radius:20px;
+  padding:5px 14px;
+  margin-bottom:2.5rem;
+  font-family:'Space Mono',monospace;
+  opacity:0;
+  animation:fadeUp 0.6s 0.5s forwards;
+}
+
+.pulse{
+  width:6px;height:6px;
+  border-radius:50%;
+  background:var(--accent3);
+  animation:pulsate 1.5s infinite;
+  flex-shrink:0;
+}
+
+.stats-row{
+  display:flex;
+  justify-content:center;
+  gap:2.5rem;
+  flex-wrap:wrap;
+  margin-bottom:3rem;
+  opacity:0;
+  animation:fadeUp 0.6s 0.55s forwards;
+}
+
+.stat{text-align:center;}
+
+.stat-num{
+  font-family:'Space Mono',monospace;
+  font-size:2rem;
+  font-weight:700;
+  color:var(--accent);
+  display:block;
+  line-height:1;
+}
+
+.stat-label{
+  font-size:10px;
+  color:var(--muted);
+  text-transform:uppercase;
+  letter-spacing:0.12em;
+  margin-top:5px;
+  display:block;
+}
+
+.hero-links{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+  opacity:0;
+  animation:fadeUp 0.6s 0.65s forwards;
+}
+
+.hero-link{
+  font-family:'Space Mono',monospace;
+  font-size:11px;
+  color:var(--accent);
+  text-decoration:none;
+  padding:7px 16px;
+  border:0.5px solid rgba(0,212,255,0.3);
+  border-radius:20px;
+  transition:all 0.2s;
+}
+
+.hero-link:hover{
+  background:rgba(0,212,255,0.08);
+  border-color:var(--accent);
+}
+
+.hero-link.primary{
+  background:rgba(0,212,255,0.1);
+}
+
+/* SECTIONS */
+.section{
+  padding:3.5rem 1.5rem;
+  max-width:780px;
+  margin:0 auto;
+}
+
+.section-label{
+  font-family:'Space Mono',monospace;
+  font-size:10px;
+  color:var(--accent);
+  letter-spacing:0.25em;
+  text-transform:uppercase;
+  margin-bottom:1.75rem;
+  opacity:0.7;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.section-label::after{
+  content:'';
+  flex:1;
+  height:0.5px;
+  background:var(--border);
+}
+
+.divider-line{
+  height:0.5px;
+  background:var(--border);
+  max-width:780px;
+  margin:0 auto;
+  opacity:0.5;
+}
+
+/* TIMELINE */
+.timeline{
+  position:relative;
+  padding-left:2.5rem;
+}
+
+.timeline::before{
+  content:'';
+  position:absolute;
+  left:10px;top:6px;bottom:6px;
+  width:1.5px;
+  background:linear-gradient(to bottom,
+    var(--gold) 0%,
+    var(--gold) 10%,
+    #a78bfa 20%,
+    #60a5fa 55%,
+    var(--accent) 100%);
+  opacity:0.25;
+}
+
+.tl-item{
+  position:relative;
+  margin-bottom:1rem;
+  opacity:0;
+  transform:translateX(-14px);
+  transition:opacity 0.45s,transform 0.45s;
+}
+
+.tl-item.visible{opacity:1;transform:translateX(0);}
+
+.tl-dot{
+  position:absolute;
+  left:-2.08rem;
+  top:15px;
+  width:12px;height:12px;
+  border-radius:50%;
+  border:2px solid var(--accent);
+  background:var(--bg);
+  z-index:1;
+  transition:transform 0.2s;
+}
+
+.tl-item:hover .tl-dot{transform:scale(1.3);}
+
+.tl-dot.era-cobol{border-color:#f59e0b;box-shadow:0 0 8px rgba(245,158,11,0.3);}
+.tl-dot.era-vb{border-color:#a78bfa;}
+.tl-dot.era-net{border-color:#60a5fa;}
+.tl-dot.era-full{border-color:#34d399;}
+.tl-dot.era-ai{border-color:var(--accent);box-shadow:0 0 10px rgba(0,212,255,0.5);}
+
+.tl-card{
+  background:var(--surface);
+  border:0.5px solid var(--border);
+  border-radius:10px;
+  padding:0.9rem 1.1rem;
+  cursor:pointer;
+  transition:border-color 0.2s,background 0.2s,transform 0.15s;
+  user-select:none;
+}
+
+.tl-card:hover{
+  border-color:rgba(0,212,255,0.4);
+  background:var(--surface2);
+}
+
+.tl-card.active{
+  border-color:var(--accent);
+  background:var(--surface2);
+}
+
+.tl-header{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:10px;
+}
+
+.tl-company{
+  font-weight:600;
+  font-size:0.9rem;
+  color:var(--text);
+}
+
+.tl-period{
+  font-family:'Space Mono',monospace;
+  font-size:10px;
+  color:var(--muted);
+  white-space:nowrap;
+  margin-top:2px;
+  flex-shrink:0;
+}
+
+.tl-role{
+  font-size:12px;
+  color:var(--muted);
+  margin-top:3px;
+}
+
+.tl-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:4px;
+  margin-top:9px;
+}
+
+.tag{
+  font-size:10px;
+  padding:2px 8px;
+  border-radius:20px;
+  font-family:'Space Mono',monospace;
+}
+
+.tag-net{background:rgba(96,165,250,0.1);color:#93c5fd;border:0.5px solid rgba(96,165,250,0.2);}
+.tag-db{background:rgba(52,211,153,0.08);color:#6ee7b7;border:0.5px solid rgba(52,211,153,0.2);}
+.tag-front{background:rgba(167,139,250,0.1);color:#c4b5fd;border:0.5px solid rgba(167,139,250,0.2);}
+.tag-devops{background:rgba(245,158,11,0.1);color:#fcd34d;border:0.5px solid rgba(245,158,11,0.2);}
+.tag-legacy{background:rgba(100,116,139,0.12);color:#94a3b8;border:0.5px solid rgba(100,116,139,0.2);}
+.tag-ai{background:rgba(0,212,255,0.08);color:#67e8f9;border:0.5px solid rgba(0,212,255,0.25);}
+
+.tl-detail{
+  display:none;
+  margin-top:11px;
+  padding-top:11px;
+  border-top:0.5px solid var(--border);
+  font-size:12.5px;
+  color:#94a3b8;
+  line-height:1.7;
+}
+
+.tl-detail.open{display:block;}
+.tl-highlight{color:var(--accent);font-weight:600;}
+.tl-toggle{
+  font-size:10px;
+  color:var(--muted);
+  margin-top:8px;
+  font-family:'Space Mono',monospace;
+}
+
+.era-legend{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-bottom:1.5rem;
+}
+
+.era-item{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  font-size:11px;
+  color:var(--muted);
+  font-family:'Space Mono',monospace;
+}
+
+.era-dot{
+  width:8px;height:8px;
+  border-radius:50%;
+  flex-shrink:0;
+}
+
+/* STACK */
+.stack-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:10px;
+}
+
+.stack-card{
+  background:var(--surface);
+  border:0.5px solid var(--border);
+  border-radius:10px;
+  padding:1rem 1.1rem;
+  transition:border-color 0.2s,transform 0.2s;
+}
+
+.stack-card:hover{
+  border-color:rgba(0,212,255,0.35);
+  transform:translateY(-2px);
+}
+
+.stack-icon{
+  font-size:1.3rem;
+  margin-bottom:7px;
+  display:block;
+}
+
+.stack-name{
+  font-size:13px;
+  font-weight:600;
+  color:var(--text);
+  margin-bottom:6px;
+}
+
+.stack-bar-track{
+  height:3px;
+  background:rgba(255,255,255,0.05);
+  border-radius:2px;
+  overflow:hidden;
+  margin-bottom:5px;
+}
+
+.stack-bar-fill{
+  height:100%;
+  border-radius:2px;
+  width:0%;
+  transition:width 1.3s cubic-bezier(.4,0,.2,1);
+}
+
+.stack-years{
+  font-family:'Space Mono',monospace;
+  font-size:10px;
+  color:var(--muted);
+}
+
+/* CERTS */
+.cert-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:10px;
+}
+
+.cert-card{
+  background:var(--surface);
+  border:0.5px solid var(--border);
+  border-radius:10px;
+  padding:0.9rem 1rem;
+  display:flex;
+  gap:10px;
+  align-items:flex-start;
+  transition:border-color 0.2s;
+}
+
+.cert-card:hover{border-color:rgba(0,212,255,0.3);}
+
+.cert-icon{
+  width:34px;height:34px;
+  border-radius:8px;
+  background:rgba(0,212,255,0.08);
+  border:0.5px solid rgba(0,212,255,0.2);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1rem;
+  flex-shrink:0;
+}
+
+.cert-name{
+  font-size:12px;
+  font-weight:600;
+  color:var(--text);
+  margin-bottom:3px;
+  line-height:1.3;
+}
+
+.cert-issuer{
+  font-size:10px;
+  color:var(--muted);
+  font-family:'Space Mono',monospace;
+}
+
+/* UNIQUE */
+.unique-card{
+  background:linear-gradient(135deg,var(--surface) 0%,rgba(0,212,255,0.04) 100%);
+  border:0.5px solid rgba(0,212,255,0.15);
+  border-radius:12px;
+  padding:1.25rem;
+  margin-bottom:10px;
+  display:flex;
+  gap:1rem;
+  align-items:flex-start;
+  transition:border-color 0.2s;
+}
+
+.unique-card:hover{border-color:rgba(0,212,255,0.3);}
+
+.unique-icon-wrap{
+  width:42px;height:42px;
+  border-radius:8px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.2rem;
+  flex-shrink:0;
+  background:rgba(0,212,255,0.07);
+  border:0.5px solid rgba(0,212,255,0.18);
+}
+
+.unique-title{
+  font-size:14px;
+  font-weight:600;
+  color:var(--text);
+  margin-bottom:5px;
+}
+
+.unique-desc{
+  font-size:12.5px;
+  color:#94a3b8;
+  line-height:1.65;
+}
+
+/* CONTACT */
+.contact-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:10px;
+}
+
+.contact-card{
+  background:var(--surface);
+  border:0.5px solid var(--border);
+  border-radius:10px;
+  padding:1rem;
+  text-align:center;
+  text-decoration:none;
+  transition:all 0.2s;
+  display:block;
+}
+
+.contact-card:hover{
+  border-color:var(--accent);
+  background:var(--surface2);
+  transform:translateY(-2px);
+}
+
+.contact-card-icon{font-size:1.4rem;margin-bottom:7px;display:block;}
+.contact-card-label{font-size:11px;color:var(--muted);font-family:'Space Mono',monospace;display:block;margin-bottom:3px;}
+.contact-card-value{font-size:13px;font-weight:600;color:var(--accent);}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:2.5rem 1rem 3rem;
+  border-top:0.5px solid var(--border);
+  margin-top:1rem;
+}
+
+footer p{
+  font-size:11px;
+  color:var(--muted);
+  font-family:'Space Mono',monospace;
+  line-height:1.8;
+}
+
+footer a{color:var(--accent);text-decoration:none;}
+
+/* ANIMATIONS */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(18px);}
+  to{opacity:1;transform:translateY(0);}
+}
+
+@keyframes pulsate{
+  0%,100%{opacity:1;transform:scale(1);}
+  50%{opacity:0.4;transform:scale(0.75);}
+}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+  nav{padding:0.65rem 1rem;}
+  .nav-links{display:none;}
+  .hero{padding:3.5rem 1rem 2.5rem;}
+  .stats-row{gap:1.5rem;}
+  .section{padding:2.5rem 1rem;}
+  .timeline{padding-left:2rem;}
+}
+
+/* scrollbar */
+::-webkit-scrollbar{width:4px;}
+::-webkit-scrollbar-track{background:var(--bg);}
+::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px;}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="https://masilvaarcs.github.io/portfolio-hub" class="nav-logo">← portfolio-hub</a>
+  <ul class="nav-links">
+    <li><a href="#trajetoria">Trajetória</a></li>
+    <li><a href="#stack">Stack</a></li>
+    <li><a href="#certificacoes">Certificações</a></li>
+    <li><a href="#diferenciais">Diferenciais</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+  <a href="https://www.linkedin.com/in/marcosprogramador/" target="_blank" class="nav-back">LinkedIn ↗</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <p class="hero-eyebrow" id="heroEyebrow"></p>
+  <h1 class="hero-name">Marcos <span>Santos</span> da Silva</h1>
+  <p class="hero-role">
+    Full Stack Developer &nbsp;·&nbsp; .NET C# &nbsp;·&nbsp; Angular &nbsp;·&nbsp; Python<br>
+    Azure &nbsp;·&nbsp; Docker &nbsp;·&nbsp; ERP &nbsp;·&nbsp; WMS &nbsp;·&nbsp; Sistemas Críticos
+  </p>
+  <div class="available-badge">
+    <div class="pulse"></div>
+    disponível para oportunidades remotas ou híbridas
+  </div>
+  <div class="stats-row">
+    <div class="stat">
+      <span class="stat-num" id="cntYears">0</span>
+      <span class="stat-label">anos de código</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num" id="cntCo">0</span>
+      <span class="stat-label">empresas</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num" id="cntStack">0</span>
+      <span class="stat-label">tecnologias</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num" id="cntCert">0</span>
+      <span class="stat-label">certificações</span>
+    </div>
+  </div>
+  <div class="hero-links">
+    <a href="https://masilvaarcs.github.io/portfolio-hub" class="hero-link primary">🌐 Portfólio</a>
+    <a href="https://www.linkedin.com/in/marcosprogramador/" target="_blank" class="hero-link">LinkedIn</a>
+    <a href="https://github.com/masilvaarcs" target="_blank" class="hero-link">GitHub</a>
+    <a href="mailto:masilva.arcs@gmail.com" class="hero-link">E-mail</a>
+  </div>
+</section>
+
+<!-- TRAJETÓRIA -->
+<section class="section" id="trajetoria">
+  <p class="section-label" id="labelTrajetoria"></p>
+
+  <div class="era-legend">
+    <div class="era-item"><div class="era-dot" style="background:#f59e0b;"></div>Era COBOL / Bancário</div>
+    <div class="era-item"><div class="era-dot" style="background:#a78bfa;"></div>Era Visual Basic / ERP</div>
+    <div class="era-item"><div class="era-dot" style="background:#60a5fa;"></div>Era .NET / Multi-stack</div>
+    <div class="era-item"><div class="era-dot" style="background:#00d4ff;box-shadow:0 0 6px rgba(0,212,255,0.5);"></div>Era Full Stack + IA</div>
+  </div>
+
+  <div class="timeline" id="timeline"></div>
+</section>
+
+<div class="divider-line"></div>
+
+<!-- STACK -->
+<section class="section" id="stack">
+  <p class="section-label">// stack · proficiência por anos de uso</p>
+  <div class="stack-grid" id="stackGrid"></div>
+</section>
+
+<div class="divider-line"></div>
+
+<!-- CERTIFICAÇÕES -->
+<section class="section" id="certificacoes">
+  <p class="section-label">// certificações</p>
+  <div class="cert-grid" id="certGrid"></div>
+</section>
+
+<div class="divider-line"></div>
+
+<!-- DIFERENCIAIS -->
+<section class="section" id="diferenciais">
+  <p class="section-label">// diferenciais únicos</p>
+  <div id="uniqueCards"></div>
+</section>
+
+<div class="divider-line"></div>
+
+<!-- CONTATO -->
+<section class="section" id="contato">
+  <p class="section-label">// contato</p>
+  <div class="contact-grid">
+    <a href="https://www.linkedin.com/in/marcosprogramador/" target="_blank" class="contact-card">
+      <span class="contact-card-icon">💼</span>
+      <span class="contact-card-label">LinkedIn</span>
+      <span class="contact-card-value">marcosprogramador</span>
+    </a>
+    <a href="https://github.com/masilvaarcs" target="_blank" class="contact-card">
+      <span class="contact-card-icon">💻</span>
+      <span class="contact-card-label">GitHub</span>
+      <span class="contact-card-value">masilvaarcs</span>
+    </a>
+    <a href="https://masilvaarcs.github.io/portfolio-hub" target="_blank" class="contact-card">
+      <span class="contact-card-icon">🌐</span>
+      <span class="contact-card-label">Portfólio</span>
+      <span class="contact-card-value">portfolio-hub</span>
+    </a>
+    <a href="mailto:masilva.arcs@gmail.com" class="contact-card">
+      <span class="contact-card-icon">✉️</span>
+      <span class="contact-card-label">E-mail</span>
+      <span class="contact-card-value">masilva.arcs</span>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <p>
+    Marcos Santos da Silva &nbsp;·&nbsp; Gravataí / RS<br>
+    <a href="https://masilvaarcs.github.io/portfolio-hub">portfolio-hub</a>
+    &nbsp;·&nbsp;
+    <a href="https://www.linkedin.com/in/marcosprogramador/" target="_blank">linkedin/marcosprogramador</a>
+    &nbsp;·&nbsp;
+    <a href="https://github.com/masilvaarcs" target="_blank">github/masilvaarcs</a><br><br>
+    Disponível para oportunidades remotas ou híbridas · <span id="footerYear"></span>
+  </p>
+</footer>
+
+<!-- Dados separados: edite perfil-data.js para atualizar experiências, stack e certificações -->
+<script src="perfil-data.js"></script>
+<script>
+// ─── Valores calculados automaticamente ───────────────────────────────────────
+const currentYear = new Date().getFullYear();
+const yearsOfCode  = currentYear - profileConfig.startYear;
+const totalStack   = stack.length + profileConfig.stackCountExtra;
+
+// Textos dinâmicos
+document.getElementById('heroEyebrow').textContent =
+  `// perfil técnico interativo · ${profileConfig.startYear} → ${currentYear}`;
+document.getElementById('labelTrajetoria').textContent =
+  `// trajetória · ${yearsOfCode} anos de código contínuo`;
+document.getElementById('footerYear').textContent = currentYear;
+
+// ─── Build timeline ────────────────────────────────────────────────────────────
+const tlEl = document.getElementById('timeline');
+timeline.forEach((item, i) => {
+  const div = document.createElement('div');
+  div.className = 'tl-item';
+  div.style.transitionDelay = (i * 0.06) + 's';
+  div.innerHTML = `
+    <div class="tl-dot ${item.era}"></div>
+    <div class="tl-card" onclick="toggleDetail(this)">
+      <div class="tl-header">
+        <div>
+          <div class="tl-company">${item.company}</div>
+          <div class="tl-role">${item.role}</div>
+        </div>
+        <div class="tl-period">${item.period}</div>
+      </div>
+      <div class="tl-tags">${item.tags.map(t => `<span class="tag ${t.c}">${t.l}</span>`).join('')}</div>
+      <div class="tl-detail">${item.detail}</div>
+      <div class="tl-toggle">▸ clique para detalhes</div>
+    </div>`;
+  tlEl.appendChild(div);
+});
+
+function toggleDetail(card) {
+  const detail = card.querySelector('.tl-detail');
+  const toggle = card.querySelector('.tl-toggle');
+  const isOpen = detail.classList.contains('open');
+  document.querySelectorAll('.tl-detail.open').forEach(d => d.classList.remove('open'));
+  document.querySelectorAll('.tl-card.active').forEach(c => c.classList.remove('active'));
+  document.querySelectorAll('.tl-toggle').forEach(t => t.textContent = '▸ clique para detalhes');
+  if (!isOpen) {
+    detail.classList.add('open');
+    card.classList.add('active');
+    toggle.textContent = '▴ fechar';
+  }
+}
+
+// ─── Build stack ───────────────────────────────────────────────────────────────
+const sgEl = document.getElementById('stackGrid');
+stack.forEach(s => {
+  const d = document.createElement('div');
+  d.className = 'stack-card';
+  d.innerHTML = `
+    <span class="stack-icon">${s.icon}</span>
+    <div class="stack-name">${s.name}</div>
+    <div class="stack-bar-track"><div class="stack-bar-fill" data-pct="${s.pct}" style="background:${s.color};"></div></div>
+    <div class="stack-years">${s.years} ano${s.years > 1 ? 's' : ''} de uso · ${s.pct}%</div>`;
+  sgEl.appendChild(d);
+});
+
+// ─── Build certs ───────────────────────────────────────────────────────────────
+const cgEl = document.getElementById('certGrid');
+certs.forEach(c => {
+  const d = document.createElement('div');
+  d.className = 'cert-card';
+  d.innerHTML = `<div class="cert-icon">${c.icon}</div><div><div class="cert-name">${c.name}</div><div class="cert-issuer">${c.issuer}</div></div>`;
+  cgEl.appendChild(d);
+});
+
+// ─── Build unique cards ────────────────────────────────────────────────────────
+const ucEl = document.getElementById('uniqueCards');
+uniques.forEach(u => {
+  const d = document.createElement('div');
+  d.className = 'unique-card';
+  d.innerHTML = `<div class="unique-icon-wrap">${u.icon}</div><div><div class="unique-title">${u.title}</div><div class="unique-desc">${u.desc}</div></div>`;
+  ucEl.appendChild(d);
+});
+
+// ─── Intersection observer — timeline reveal ────────────────────────────────────
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.08 });
+document.querySelectorAll('.tl-item').forEach(el => observer.observe(el));
+
+// ─── Stack bars after load ──────────────────────────────────────────────────────
+setTimeout(() => {
+  document.querySelectorAll('.stack-bar-fill').forEach(el => {
+    el.style.width = el.dataset.pct + '%';
+  });
+}, 500);
+
+// ─── Counter animation ──────────────────────────────────────────────────────────
+function animateCount(el, target, suffix) {
+  let cur = 0;
+  const step = Math.ceil(target / 32);
+  const timer = setInterval(() => {
+    cur = Math.min(cur + step, target);
+    el.textContent = cur + suffix;
+    if (cur >= target) clearInterval(timer);
+  }, 38);
+}
+setTimeout(() => {
+  animateCount(document.getElementById('cntYears'), yearsOfCode,                  '+');
+  animateCount(document.getElementById('cntCo'),    profileConfig.companiesCount, '+');
+  animateCount(document.getElementById('cntStack'), totalStack,                   '+');
+  animateCount(document.getElementById('cntCert'),  certs.length,                 '' );
+}, 350);
+</script>
+</body>
+</html>
